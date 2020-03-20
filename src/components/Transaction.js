@@ -1,7 +1,6 @@
 import React from 'react'
 
-const Transaction = (props) => {
- const {posted_at, description, category, amount} = props.transaction
+const Transaction = ({posted_at, description, category, amount}) => {
   return (
     <tr>
       <td>{posted_at}</td>

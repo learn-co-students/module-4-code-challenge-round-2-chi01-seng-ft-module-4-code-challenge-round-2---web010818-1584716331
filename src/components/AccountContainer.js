@@ -30,10 +30,10 @@ class AccountContainer extends Component {
   handleChange = (event) => {
     event.persist();
     const filteredTransactions = this.state.storedTransactions.filter(transaction => {
-      if ((transaction.description.toLowerCase().includes(event.target.value.toLowerCase())) || (transaction.category.toLowerCase().includes(event.target.value.toLowerCase()))){
+      if (((" " + transaction.description).toLowerCase().includes(` ${event.target.value.toLowerCase()}`)) || (transaction.category.toLowerCase().includes(event.target.value.toLowerCase()))){
         return true
       } else return false
-    });
+    }); // filter accounts for word needing to start with what you type
     this.setState({
       transactions: filteredTransactions
     })
