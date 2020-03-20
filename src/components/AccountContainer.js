@@ -33,7 +33,8 @@ class AccountContainer extends Component {
 
   renderFilteredTrans = () => {
     // // using the searchTerm, query the transactions and conditionally render them to the screen. Using filter
-    const filteredTrans = this.state.transactions.filter(trans => (trans.category.includes(this.state.searchTerm) || trans.description.includes(this.state.searchTerm)))
+    const lowerSearchTerm = this.state.searchTerm.toLowerCase()
+    const filteredTrans = this.state.transactions.filter(trans => (trans.category.toLowerCase().includes(lowerSearchTerm) || trans.description.toLowerCase().includes(lowerSearchTerm)))
     return filteredTrans
   }
 
